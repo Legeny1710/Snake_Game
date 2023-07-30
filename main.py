@@ -6,13 +6,12 @@ from score_board import ScoreBoard
 
 screen = Screen()
 screen.setup(width=600, height=600)
-screen.title("The Snake Game")
+screen.title("Snake Game")
 screen.tracer(0)
 
 snake = Snake()
 food = Food()
 scoreBoard = ScoreBoard()
-
 
 
 screen.listen()
@@ -37,6 +36,7 @@ while game_is_on:
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 300 or snake.head.ycor() < -280:
         game_is_on = False
         scoreBoard.game_over()
+
 
     # Detect collision with Tail
     for segment in snake.segments[1:]:
